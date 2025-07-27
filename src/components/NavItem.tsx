@@ -37,7 +37,7 @@ const NavItem: React.FC<NavItemProps> = ({ href, icon, title }) => {
         </div>
 
         {/* Text that appears on hover */}
-        <span className="ml-3 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-white group-hover:text-[#4ADE80] font-semibold">
+        <span className="ml-3 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-white group-hover:text-[#4ADE80] font-semibold">
           {title}
         </span>
 
