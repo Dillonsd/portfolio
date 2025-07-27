@@ -1,4 +1,5 @@
 import NavItem from "./components/NavItem";
+import HeroPlanet from "./components/HeroPlanet";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -123,21 +124,27 @@ function App() {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen flex items-center px-8 pt-20 pb-16 bg-gradient-to-br from-[#1E1E2E] to-[#0E0E10] relative overflow-hidden"
+        className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#1E1E2E] to-[#0E0E10]"
       >
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+        {/* Full-screen Planet Canvas */}
+        <div className="absolute inset-0 z-10">
+          <HeroPlanet className="w-full h-full" />
+        </div>
+        
+        {/* Content Overlay */}
+        <div className="relative z-0 flex items-center min-h-screen px-32 pt-20 pb-16">
+          <div className="text-left max-w-4xl">
+            <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight mb-4">
               <span className="bg-gradient-to-r from-[#4ADE80] to-[#A78BFA] bg-clip-text text-transparent">
                 Hello, I'm
               </span>
               <br />
               <span className="text-white block">Dillon Sahadevan</span>
             </h1>
-            <p className="text-xl text-[#4ADE80] font-semibold mb-4">
+            <p className="text-xl lg:text-2xl text-[#4ADE80] font-semibold mb-4">
               Software Engineer
             </p>
-            <p className="text-lg text-[#9CA3AF] mb-8 max-w-lg mx-auto lg:mx-0">
+            <p className="text-lg lg:text-xl text-[#9CA3AF] mb-8 max-w-2xl">
               I love learning new technologies and building new projects.
             </p>
           </div>
