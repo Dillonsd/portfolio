@@ -52,8 +52,8 @@ const Planet = () => {
 
   useFrame(() => {
     if (planetGroupRef.current) {
-      // Base rotation
-      planetGroupRef.current.rotation.y += 0.005;
+      // Base rotation - slowed down
+      planetGroupRef.current.rotation.y += 0.002;
 
       // Drag-controlled rotation speed
       planetGroupRef.current.rotation.y += dragSpeed.x;
@@ -62,34 +62,56 @@ const Planet = () => {
 
   return (
     <group ref={planetGroupRef} position={[-1.5, 0, 3.5]}>
-      {/* Planet */}
+      {/* Planet Core */}
       <mesh castShadow>
         <sphereGeometry args={[1.5, 128, 128]} />
         <meshPhongMaterial
           color={0x1e1e2e}
-          shininess={15}
+          shininess={30}
           transparent
           opacity={1.0}
         />
       </mesh>
 
-      {/* Atmosphere */}
+      {/* Planet Surface Layer */}
+      <mesh>
+        <sphereGeometry args={[1.52, 128, 128]} />
+        <meshPhongMaterial
+          color={0x2d2d3a}
+          shininess={20}
+          transparent
+          opacity={0.8}
+        />
+      </mesh>
+
+      {/* Atmosphere Glow */}
       <mesh>
         <sphereGeometry args={[1.6, 128, 128]} />
         <meshPhongMaterial
           color={0x4ade80}
           transparent
-          opacity={0.1}
+          opacity={0.15}
+          side={THREE.BackSide}
+        />
+      </mesh>
+
+      {/* Outer Atmosphere */}
+      <mesh>
+        <sphereGeometry args={[1.7, 128, 128]} />
+        <meshPhongMaterial
+          color={0x4ade80}
+          transparent
+          opacity={0.05}
           side={THREE.BackSide}
         />
       </mesh>
 
       {/* Rings */}
       {[
-        { color: 0x4ade80, radius: 2.2 },
-        { color: 0xa78bfa, radius: 2.5 },
-        { color: 0x3b82f6, radius: 2.8 },
-        { color: 0x10b981, radius: 3.1 },
+        { color: 0x4ade80, radius: 2.2, opacity: 0.4 },
+        { color: 0xa78bfa, radius: 2.5, opacity: 0.3 },
+        { color: 0x3b82f6, radius: 2.8, opacity: 0.25 },
+        { color: 0x10b981, radius: 3.1, opacity: 0.2 },
       ].map((ring, index) => (
         <Ring key={index} {...ring} />
       ))}
@@ -101,24 +123,29 @@ const Planet = () => {
 };
 
 // Ring Component
-const Ring = ({ color, radius }: { color: number; radius: number }) => {
+const Ring = ({ 
+  color, 
+  radius, 
+  opacity = 0.3,
+}: { 
+  color: number; 
+  radius: number; 
+  opacity?: number; 
+  speed?: number; 
+}) => {
   const ringRef = useRef<THREE.Mesh>(null);
-
-  useFrame(() => {
-    if (ringRef.current) {
-      // Rings rotate in opposite direction
-      ringRef.current.rotation.z -= 0.003;
-    }
-  });
 
   return (
     <mesh ref={ringRef} rotation={[Math.PI / 2, 0, 0]}>
-      <ringGeometry args={[radius, radius + 0.1, 128]} />
+      <ringGeometry args={[radius, radius + 0.15, 128]} />
       <meshPhongMaterial
         color={color}
         transparent
-        opacity={0.3}
+        opacity={opacity}
         side={THREE.DoubleSide}
+        shininess={50}
+        emissive={color}
+        emissiveIntensity={0.1}
       />
     </mesh>
   );
@@ -130,119 +157,119 @@ const iconData = [
     name: "React",
     icons: "react.svg",
     radius: 2.4,
-    speed: -0.00025,
+    speed: -0.000025,
     offset: Math.PI / 6,
   },
   {
     name: "Expo",
     icons: "expo.svg",
     radius: 2.6,
-    speed: -0.0002,
+    speed: -0.00002,
     offset: Math.PI / 3,
   },
   {
     name: "Tailwind",
     icons: "tailwind.svg",
     radius: 2.8,
-    speed: -0.00018,
+    speed: -0.000018,
     offset: Math.PI / 2,
   },
   {
     name: "Supabase",
     icons: "supabase.svg",
     radius: 3.0,
-    speed: -0.00015,
+    speed: -0.000015,
     offset: (Math.PI * 2) / 3,
   },
   {
     name: "Stripe",
     icons: "stripe.svg",
     radius: 3.2,
-    speed: -0.00012,
+    speed: -0.000012,
     offset: Math.PI,
   },
   {
     name: "Nginx",
     icons: "nginx.svg",
     radius: 2.3,
-    speed: -0.00028,
+    speed: -0.000028,
     offset: (Math.PI * 4) / 3,
   },
   {
     name: "Cloudflare",
     icons: "cloudflare.svg",
     radius: 2.5,
-    speed: -0.00022,
+    speed: -0.000022,
     offset: (Math.PI * 3) / 2,
   },
   {
     name: "MongoDB",
     icons: "mongo.svg",
     radius: 2.7,
-    speed: -0.00018,
+    speed: -0.000018,
     offset: (Math.PI * 5) / 3,
   },
   {
     name: ".NET",
     icons: "dotnet.svg",
     radius: 2.9,
-    speed: -0.00014,
+    speed: -0.000014,
     offset: Math.PI * 2,
   },
   {
     name: "C#",
     icons: "csharp.svg",
     radius: 3.1,
-    speed: -0.00011,
+    speed: -0.000011,
     offset: (Math.PI * 7) / 3,
   },
   {
     name: "TypeScript",
     icons: "typescript.svg",
     radius: 2.4,
-    speed: -0.00026,
+    speed: -0.000026,
     offset: (Math.PI * 8) / 3,
   },
   {
     name: "Node.js",
     icons: "nodejs.svg",
     radius: 2.6,
-    speed: -0.00021,
+    speed: -0.000021,
     offset: Math.PI * 3,
   },
   {
     name: "Python",
     icons: "python.svg",
     radius: 2.8,
-    speed: -0.00017,
+    speed: -0.000017,
     offset: (Math.PI * 10) / 3,
   },
   {
     name: "Git",
     icons: "git.svg",
     radius: 3.0,
-    speed: -0.00013,
+    speed: -0.000013,
     offset: (Math.PI * 11) / 3,
   },
   {
     name: "Docker",
     icons: "docker.svg",
     radius: 3.2,
-    speed: -0.0001,
+    speed: -0.00001,
     offset: Math.PI * 4,
   },
   {
     name: "C",
     icons: "c.svg",
     radius: 2.3,
-    speed: -0.00027,
+    speed: -0.000027,
     offset: (Math.PI * 13) / 3,
   },
   {
     name: "C++",
     icons: "cplusplus.svg",
     radius: 2.5,
-    speed: -0.00023,
+    speed: -0.000023,
     offset: (Math.PI * 14) / 3,
   },
 ];
@@ -369,8 +396,18 @@ const HeroPlanet: React.FC<HeroPlanetProps> = ({ className = "" }) => {
         shadows
       >
         {/* Lighting */}
-        <ambientLight intensity={0.6} />
-        <directionalLight position={[0, 12, 5]} intensity={6} castShadow />
+        <ambientLight intensity={0.4} />
+        <directionalLight position={[0, 12, 5]} intensity={8} castShadow />
+        <pointLight position={[-5, 0, 5]} color={0x4ade80} intensity={2} distance={100} />
+        <pointLight position={[5, 0, -5]} color={0xa78bfa} intensity={1.5} distance={100} />
+        <spotLight 
+          position={[0, 10, 0]} 
+          angle={0.3} 
+          penumbra={1} 
+          intensity={3} 
+          castShadow 
+          color={0xffffff}
+        />
 
         {/* Scene Objects */}
         <Planet />
