@@ -130,7 +130,7 @@ function App() {
         <div className="absolute inset-0 z-10">
           <HeroPlanet className="w-full h-full" />
         </div>
-        
+
         {/* Content Overlay */}
         <div className="relative z-0 flex items-center min-h-screen px-32 pt-20 pb-16">
           <div className="text-left max-w-4xl">
@@ -151,9 +151,287 @@ function App() {
         </div>
       </section>
 
-      {/* Experience Section */}
-
       {/* About Section */}
+      <section id="about" className="py-20 bg-[#1E1E2E]">
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+              About Me
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#4ADE80] to-[#A78BFA] mx-auto"></div>
+          </div>
+
+          <div className="space-y-12">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-white mb-4">
+                  Software Engineer & Entrepreneur
+                </h3>
+                <p className="text-lg text-[#9CA3AF] leading-relaxed">
+                  I'm a Software Engineer specializing in{" "}
+                  <span className="text-[#4ADE80] font-semibold">
+                    embedded systems
+                  </span>
+                  ,
+                  <span className="text-[#4ADE80] font-semibold">
+                    {" "}
+                    machine learning
+                  </span>
+                  , and{" "}
+                  <span className="text-[#4ADE80] font-semibold">
+                    full-stack development
+                  </span>
+                  . With expertise in building cross-platform mobile applications
+                  and IoT solutions, I enjoy tinkering with new technologies and
+                  building and working on interesting projects that make an impact.
+                </p>
+                <p className="text-lg text-[#9CA3AF] leading-relaxed">
+                  I co-founded PitStopX,
+                  a mobile platform connecting mechanics with users. My experience
+                  spans from developing{" "}
+                  <span className="text-[#4ADE80] font-semibold">
+                    sensor drivers
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-[#4ADE80] font-semibold">
+                    wireless protocols
+                  </span>{" "}
+                  at Garmin to{" "}
+                  <span className="text-[#4ADE80] font-semibold">
+                    full-stack development
+                  </span>{" "}
+                  at the University of Calgary Solar Car Team to{" "}
+                  <span className="text-[#4ADE80] font-semibold">
+                    embedded ML research
+                  </span>{" "}
+                  at the University of Calgary.
+                </p>
+                <p className="text-lg text-[#9CA3AF] leading-relaxed">
+                  I hold a B.Sc. in Software Engineering with a Minor in Computer
+                  Science from the University of Calgary, where I researched{" "}
+                  <span className="text-[#4ADE80] font-semibold">
+                    neural network compression
+                  </span>
+                  {" " }and{" "}
+                  <span className="text-[#4ADE80] font-semibold">
+                    embedded ML security
+                  </span>
+                  , focusing on optimizing deep learning models for
+                  resource-constrained devices.
+                </p>
+                <p className="text-lg text-[#9CA3AF] leading-relaxed">
+                  In my free time, I enjoy playing{" "}
+                  <span className="text-[#4ADE80] font-semibold">
+                    video games
+                  </span>
+                  , listening to and playing{" "}
+                  <span className="text-[#4ADE80] font-semibold">music</span>, and{" "}
+                  <span className="text-[#4ADE80] font-semibold">
+                    tinkering with 3D printing
+                  </span>{" "}
+                  projects.
+                </p>
+              </div>
+
+              <div className="bg-[#2A2A3E] rounded-lg p-6">
+                <h4 className="text-xl font-semibold text-white mb-4">
+                  Key Achievements
+                </h4>
+                <ul className="space-y-3 text-[#9CA3AF]">
+                  <li className="flex items-start">
+                    <span className="text-[#4ADE80] mr-3">•</span>
+                    <span>
+                      Co-founded and built{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        PitStopX
+                      </span>{" "}
+                      with{" "}
+                      <span className="text-[#4ADE80] font-semibold">Expo</span>
+                      ,{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        React Native
+                      </span>
+                      ,{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        Tailwind CSS
+                      </span>
+                      ,{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        Supabase
+                      </span>
+                      , and{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        Stripe
+                      </span>{" "}
+                      integration
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#4ADE80] mr-3">•</span>
+                    <span>
+                      Developed{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        sensor drivers
+                      </span>{" "}
+                      for{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        Ambiq
+                      </span>{" "}
+                      and{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        Nordic
+                      </span>{" "}
+                      MCUs using{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        I2C
+                      </span>{" "}
+                      and{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        SPI
+                      </span>{" "}
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#4ADE80] mr-3">•</span>
+                    <span>
+                      Built{" "}
+                      <span className="text-[#4ADE80] font-semibold">ANT+</span>{" "}
+                      wireless features for{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        Garmin
+                      </span>{" "}
+                      products
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#4ADE80] mr-3">•</span>
+                    <span>
+                      Developed{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        automated testing
+                      </span>{" "}
+                      tools using{" "}
+                      <span className="text-[#4ADE80] font-semibold">Python</span>
+                      ,{" "}
+                      <span className="text-[#4ADE80] font-semibold">.NET</span>
+                      , and{" "}
+                      <span className="text-[#4ADE80] font-semibold">WPF</span>{" "}
+                      for Garmin and 3rd party partner product validation
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                     <span className="text-[#4ADE80] mr-3">•</span>
+                     <span>
+                       Built telemetry website/backend for University of Calgary Solar Car Team using{" "}
+                       <span className="text-[#4ADE80] font-semibold">
+                         Angular
+                       </span>
+                       ,{" "}
+                       <span className="text-[#4ADE80] font-semibold">
+                         React
+                       </span>
+                       ,{" "}
+                       <span className="text-[#4ADE80] font-semibold">
+                         MongoDB
+                       </span>
+                       , and{" "}
+                       <span className="text-[#4ADE80] font-semibold">
+                         RabbitMQ
+                       </span>
+                     </span>
+                   </li>
+                   <li className="flex items-start">
+                     <span className="text-[#4ADE80] mr-3">•</span>
+                     <span>
+                       Led team at University of Calgary Solar Car Team developing{" "}
+                       <span className="text-[#4ADE80] font-semibold">
+                         STM32
+                       </span>{" "}
+                       embedded systems for wireless telemetry and battery management
+                     </span>
+                   </li>
+                  <li className="flex items-start">
+                    <span className="text-[#4ADE80] mr-3">•</span>
+                    <span>
+                      Researched{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        embedded neural network compression
+                      </span>{" "}
+                      and it's effect on{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        poisoning-based neural network attacks
+                      </span>
+                      , and built{" "}
+                      <span className="text-[#4ADE80] font-semibold">
+                        PyTorch
+                      </span>{" "}
+                      frameworks for model and technique evaluation
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-[#2A2A3E] rounded-lg p-6">
+              <h4 className="text-xl font-semibold text-white mb-4">
+                Technical Expertise
+              </h4>
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <h5 className="text-[#4ADE80] font-semibold mb-2">
+                    Languages
+                  </h5>
+                  <p className="text-[#9CA3AF]">
+                    TypeScript, JavaScript, C, C++, Python, C#, Java
+                  </p>
+                </div>
+                <div>
+                  <h5 className="text-[#4ADE80] font-semibold mb-2">
+                    Frameworks
+                  </h5>
+                  <p className="text-[#9CA3AF]">
+                    React Native, React, Angular, Node.js, Expo
+                  </p>
+                </div>
+                <div>
+                  <h5 className="text-[#4ADE80] font-semibold mb-2">
+                    Embedded
+                  </h5>
+                  <p className="text-[#9CA3AF]">
+                    STM32, Nordic nRF, Ambiq, ESP32, Arduino, Zephyr
+                  </p>
+                </div>
+                <div>
+                  <h5 className="text-[#4ADE80] font-semibold mb-2">
+                    ML & Tools
+                  </h5>
+                  <p className="text-[#9CA3AF]">
+                    PyTorch, TensorFlow, Docker, Linux, .NET, Jenkins
+                  </p>
+                </div>
+                <div>
+                  <h5 className="text-[#4ADE80] font-semibold mb-2">
+                    Databases & Cloud
+                  </h5>
+                  <p className="text-[#9CA3AF]">
+                    MongoDB, Supabase, RabbitMQ, AWS, GCP
+                  </p>
+                </div>
+                <div>
+                  <h5 className="text-[#4ADE80] font-semibold mb-2">
+                    Protocols & Testing
+                  </h5>
+                  <p className="text-[#9CA3AF]">
+                    I2C/SPI, ANT+, Automated Testing, CI/CD
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
 
       {/* Projects Section */}
 
