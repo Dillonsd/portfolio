@@ -123,7 +123,7 @@ function App() {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#1E1E2E] to-[#0E0E10]"
+        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#1E1E2E] to-[#0E0E10] relative"
       >
         <div className="text-center max-w-4xl px-8">
           <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
@@ -141,7 +141,7 @@ function App() {
             embedded systems. Passionate about building innovative solutions
             that make an impact.
           </p>
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-4 mb-16">
             <a
               href="#projects"
               className="bg-gradient-to-r from-[#4ADE80] to-[#A78BFA] text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
@@ -154,6 +154,21 @@ function App() {
             >
               Get In Touch
             </a>
+          </div>
+        </div>
+        
+        {/* Scroll Down Animation */}
+        <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-opacity duration-500 ${
+          isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        }`}>
+          <div className="flex flex-col items-center text-[#9CA3AF] animate-bounce">
+            <span className="text-sm mb-2 font-medium">Scroll Down</span>
+            <div className="relative">
+              <div className="w-6 h-10 border-2 border-[#4ADE80] rounded-full flex justify-center">
+                <div className="w-1 h-3 bg-[#4ADE80] rounded-full mt-2 animate-pulse"></div>
+              </div>
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-[#4ADE80] rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+            </div>
           </div>
         </div>
       </section>
