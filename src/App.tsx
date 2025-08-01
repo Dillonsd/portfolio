@@ -123,9 +123,30 @@ function App() {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#1E1E2E] to-[#0E0E10] relative"
+        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#1E1E2E] to-[#0E0E10] relative overflow-hidden"
       >
-        <div className="text-center max-w-4xl px-8">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-[#4ADE80]/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-[#A78BFA]/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-40 left-20 w-20 h-20 bg-[#4ADE80]/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-20 right-10 w-28 h-28 bg-[#A78BFA]/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+        </div>
+
+        {/* Animated Grid Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 25% 25%, ${'#4ADE80'} 1px, transparent 1px), radial-gradient(circle at 75% 75%, ${'#A78BFA'} 1px, transparent 1px)`,
+            backgroundSize: '50px 50px, 50px 50px',
+            backgroundPosition: '0 0, 25px 25px'
+          }}></div>
+        </div>
+
+        {/* Gradient Orbs */}
+        <div className="absolute top-1/4 -left-4 w-72 h-72 bg-gradient-to-r from-[#4ADE80]/30 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 -right-4 w-72 h-72 bg-gradient-to-l from-[#A78BFA]/30 to-transparent rounded-full blur-3xl"></div>
+
+        <div className="text-center max-w-4xl px-8 relative z-10">
           <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
             <span className="bg-gradient-to-r from-[#4ADE80] to-[#A78BFA] bg-clip-text text-transparent">
               Hello, I'm
@@ -144,13 +165,13 @@ function App() {
           <div className="flex justify-center gap-4 mb-16">
             <a
               href="#projects"
-              className="bg-gradient-to-r from-[#4ADE80] to-[#A78BFA] text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+              className="bg-gradient-to-r from-[#4ADE80] to-[#A78BFA] text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
             >
               View Projects
             </a>
             <a
               href="#contact"
-              className="border border-[#4ADE80] text-[#4ADE80] px-8 py-3 rounded-lg font-semibold hover:bg-[#4ADE80] hover:text-white transition-colors"
+              className="border border-[#4ADE80] text-[#4ADE80] px-8 py-3 rounded-lg font-semibold hover:bg-[#4ADE80] hover:text-white transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Get In Touch
             </a>
